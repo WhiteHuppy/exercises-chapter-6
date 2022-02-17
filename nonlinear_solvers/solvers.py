@@ -31,12 +31,22 @@ def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
     float
         The approximate root computed using Newton iteration.
     """
-    for _ in range(max_its):
+    _ = 0
+    while True:
+        if _ == max_its:
+            raise ConvergenceError
+
         x_0 -= f(x_0) / df(x_0)
+        _ += 1
         if abs(f(x_0)) < eps:
             return x_0
 
-    raise ConvergenceError(f"iteration failed to converge after {max_its} attempts.")
+    # for _ in range(max_its):
+    #    x_0 -= f(x_0) / df(x_0)
+    #    if abs(f(x_0)) < eps:
+    #        return x_0
+
+    raise ConvergenceError(f"N-R failed to converge after {max_its} attempts.")
 
 
 def bisection(f, x_0, x_1, eps=1.0e-5, max_its=20):
