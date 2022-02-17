@@ -36,7 +36,7 @@ def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
         if abs(f(x_0)) < eps:
             return x_0
 
-    raise ConvergenceError("Newton-Raphson failed to converge after",
+    raise ConvergenceError("Newton-Raphson failed to converge after" +
                            f"{max_its} attempts.")
 
 
@@ -78,7 +78,7 @@ def bisection(f, x_0, x_1, eps=1.0e-5, max_its=20):
         else:
             x_1 = x_2
 
-    raise ConvergenceError("bisection failed to converge after",
+    raise ConvergenceError("bisection failed to converge after" +
                            f"{max_its} attempts.")
 
 
