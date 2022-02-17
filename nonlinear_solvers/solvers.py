@@ -31,7 +31,6 @@ def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
     float
         The approximate root computed using Newton iteration.
     """
-
     for _ in range(max_its):
         x_0 -= f(x_0) / df(x_0)
         if abs(f(x_0)) < eps:
@@ -66,7 +65,6 @@ def bisection(f, x_0, x_1, eps=1.0e-5, max_its=20):
     float
         The approximate root computed using bisection.
     """
-
     if (f(x_0) < 0) == (f(x_1) < 0):
         raise ValueError(f"starting points {x_0} and {x_1}",
                          "have the same sign on f.")
