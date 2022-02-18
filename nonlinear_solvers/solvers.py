@@ -33,6 +33,7 @@ def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
     """
     _ = 0
     while True:
+        print(_, x_0)
         if _ == max_its:
             raise ConvergenceError
 
